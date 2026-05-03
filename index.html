@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indonesia — 2 Week Itinerary</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Two Weeks in Indonesia</h1>
+    <p>Java &middot; Bali &middot; Komodo</p>
+    <nav>
+      <a href="index.html" class="active">Itinerary</a>
+      <a href="checklist.html">Packing Checklist</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="summary">
+      <div class="card"><div class="label">Duration</div><div class="value">14 days</div></div>
+      <div class="card"><div class="label">Cities</div><div class="value">7 stops</div></div>
+      <div class="card"><div class="label">Flights</div><div class="value">4 internal</div></div>
+      <div class="card"><div class="label">Highlight</div><div class="value">Komodo</div></div>
+    </section>
+
+    <h2 class="section-title">Daily Calendar</h2>
+    <p style="color: var(--muted); margin-bottom: 1.25rem; font-size: 0.95rem;">Click any day for the full hourly breakdown.</p>
+
+    <div class="calendar" id="calendar"></div>
+  </main>
+
+  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-header">
+        <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+        <div class="day-label" id="modal-day-label">Day</div>
+        <h2 id="modal-title">Title</h2>
+        <div class="meta" id="modal-meta">Location</div>
+      </div>
+      <div class="modal-body">
+        <ul class="schedule" id="modal-schedule"></ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>Selamat jalan! &mdash; Have a wonderful trip.</footer>
+
+  <script src="itinerary.js"></script>
+  <script>
+    const calendar = document.getElementById("calendar");
+    const modal = document.getElementById("modal");
+    const modalDayLabel = document.getElementById("modal-day-label");
+    const modalTitle = document.getElementById("modal-title");
+    const modalMeta = document.getElementById("modal-meta");
+    const modalSchedule = document.getElementById("modal-schedule");
+    const modalClose = document.getElementById("modal-close");
+
+    DAY_NAMES.forEach(n => {
+      const w = document.createElement("div");
+      w.className = "weekday";
+      w.textContent = n;
+      calendar.appendChild(w);
+    });
+
+    const firstDay = dayDate(1).getDay();
+    for (let i = 0; i < firstDay; i++) {
+      const empty = document.createElement("div");
+      empty.className = "empty-day";
+      calendar.appendChild(empty);
+    }
+
+    itinerary.forEach(d => {
+      const date = dayDate(d.day);
+      const btn = document.createElement("button");
+      btn.className = `day ${d.type || ""}`;
+      btn.innerHTML = `
+        <div class="day-num">Day ${d.day}</div>
+        <div class="date">${MONTH_NAMES[date.getMonth()]} ${date.getDate()}</div>
+        <div class="location">${d.location}</div>
+        <div class="highlight">${d.highlight}</div>
+      `;
+      btn.addEventListener("click", () => openDay(d));
+      calendar.appendChild(btn);
+    });
+
+    function openDay(d) {
+      const date = dayDate(d.day);
+      modalDayLabel.textContent = `Day ${d.day} — ${formatDate(date)}`;
+      modalTitle.textContent = d.location;
+      modalMeta.textContent = d.highlight;
+      modalSchedule.innerHTML = d.schedule.map(s => `
+        <li>
+          <div class="time">${s.time}</div>
+          <div class="activity">
+            <div class="title">${s.title}</div>
+            <div class="desc">${s.desc}</div>
+          </div>
+        </li>
+      `).join("");
+      modal.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+  </script>
+</body>
+</html>
