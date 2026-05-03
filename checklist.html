@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packing Checklist — Indonesia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="brand">Voyage &middot; SG / ID</a>
+    <nav>
+      <a href="index.html">Itinerary</a>
+      <a href="checklist.html" class="active">Packing</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Before you fly</span>
+      <h1>Packing <em>&amp;</em><br>Preparation</h1>
+      <p class="lead">Everything you need before boarding the flight to Singapore. Tick items off as you pack &mdash; progress is saved in your browser.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="progress">
+      <span class="label">Progress</span>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <span class="count" id="progress-count">0 / 0</span>
+      <button class="reset-btn" id="reset-btn">Reset</button>
+    </div>
+
+    <div class="checklist-grid" id="checklist-grid"></div>
+  </main>
+
+  <footer>
+    <div class="footer-mark">Selamat jalan</div>
+    Saved automatically in your browser
+  </footer>
+
+  <script>
+    const checklist = [
+      {
+        title: "Documents & Money",
+        icon: "📄",
+        items: [
+          "Passport (valid 6+ months past return date)",
+          "Printed flight confirmations",
+          "Travel insurance policy + emergency number",
+          "Visa on arrival fee (USD 35 / IDR 500k cash)",
+          "Vaccination records (yellow fever if from a risk country)",
+          "Driver's license + International Driving Permit",
+          "Photocopies of passport & cards (separate from originals)",
+          "Travel cards (Wise, Revolut) + 1 backup credit card",
+          "Cash: ~$200 USD for emergency exchange",
+          "List of hotel addresses (immigration form, taxis)",
+        ],
+      },
+      {
+        title: "Health & Safety",
+        icon: "💊",
+        items: [
+          "Mosquito repellent (DEET 30%+)",
+          "Bali belly meds: Imodium, oral rehydration salts",
+          "Probiotics (start 1 week before)",
+          "Painkillers (paracetamol, ibuprofen)",
+          "Antihistamines",
+          "Antiseptic cream + plasters/band-aids",
+          "Reef-safe sunscreen SPF 50",
+          "After-sun aloe gel",
+          "Motion sickness pills (boats!)",
+          "Personal prescriptions + copies",
+          "Hand sanitizer + wet wipes",
+        ],
+      },
+      {
+        title: "Tech & Power",
+        icon: "🔌",
+        items: [
+          "Phone + charger",
+          "Universal adapter (Type C/F plug for Indonesia)",
+          "Power bank (10 000+ mAh)",
+          "Camera + spare batteries + SD cards",
+          "GoPro / underwater camera for Komodo",
+          "Headphones",
+          "Kindle / book for long flights & boat days",
+          "eSIM activated (Airalo, Holafly) or buy Telkomsel SIM at airport",
+          "Offline Google Maps downloaded for each city",
+          "Grab + Gojek apps installed",
+        ],
+      },
+      {
+        title: "Clothing — Tropical Heat",
+        icon: "👕",
+        items: [
+          "7 lightweight t-shirts / tops",
+          "2 pairs lightweight pants",
+          "3 pairs shorts",
+          "1 long-sleeve breathable shirt (sun + temples)",
+          "Underwear x10 + socks x5",
+          "2 swimsuits",
+          "Quick-dry towel",
+          "Cover-up / sarong (also for temple visits)",
+          "Light rain jacket / poncho",
+          "1 nicer outfit for dinners",
+        ],
+      },
+      {
+        title: "Clothing — Cold (Bromo!)",
+        icon: "🧥",
+        items: [
+          "Warm fleece or puffer jacket",
+          "Long thermal leggings or pants",
+          "Beanie / warm hat",
+          "Gloves (sunrise is near 0°C)",
+          "Warm socks",
+          "Closed walking shoes for crater hike",
+        ],
+      },
+      {
+        title: "Footwear",
+        icon: "👟",
+        items: [
+          "Comfortable walking shoes / trainers",
+          "Hiking sandals (Tevas / Chacos)",
+          "Flip-flops for beach & shower",
+          "Water shoes for snorkeling on rocky entries",
+        ],
+      },
+      {
+        title: "Beach & Snorkel",
+        icon: "🤿",
+        items: [
+          "Snorkel + mask (rentals are hit-or-miss)",
+          "Rash guard / UV swim shirt",
+          "Dry bag (10–20L)",
+          "Waterproof phone pouch",
+          "Sun hat with chin strap",
+          "Polarized sunglasses + spare pair",
+        ],
+      },
+      {
+        title: "Daypack Essentials",
+        icon: "🎒",
+        items: [
+          "20–25L daypack",
+          "Reusable water bottle (1L+, refillable filters useful)",
+          "Reusable shopping bag",
+          "Small lock for hostel lockers",
+          "Headlamp (Bromo sunrise + power cuts)",
+          "Tissues / toilet paper (not always provided)",
+          "Snack bars for long travel days",
+        ],
+      },
+      {
+        title: "Toiletries",
+        icon: "🧴",
+        items: [
+          "Travel-size shampoo, conditioner, body wash",
+          "Toothbrush + toothpaste",
+          "Deodorant",
+          "Razor",
+          "Skincare basics",
+          "Lip balm with SPF",
+          "Hairbrush / hair ties",
+          "Menstrual products (limited variety locally)",
+          "Contact lenses + solution + glasses",
+        ],
+      },
+      {
+        title: "Before You Leave",
+        icon: "✅",
+        items: [
+          "Notify bank of travel dates",
+          "Set up auto-pay for bills due during trip",
+          "Arrange airport transfer / parking",
+          "Check in online 24h before flight",
+          "Empty fridge of perishables",
+          "Take out trash",
+          "Water plants / arrange plant-sitting",
+          "Pet care arranged",
+          "Mail hold / package delivery paused",
+          "Share itinerary + emergency contacts with family",
+          "Confirm all hotel bookings 48h before",
+          "Print or save offline: visa form, hotel vouchers",
+        ],
+      },
+    ];
+
+    const STORAGE_KEY = "indonesia-checklist-v1";
+    const grid = document.getElementById("checklist-grid");
+    const progressFill = document.getElementById("progress-fill");
+    const progressCount = document.getElementById("progress-count");
+    const resetBtn = document.getElementById("reset-btn");
+
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch (e) { saved = {}; }
+
+    let total = 0;
+    let checked = 0;
+
+    checklist.forEach((category, ci) => {
+      const card = document.createElement("div");
+      card.className = "checklist-card";
+      const ul = document.createElement("ul");
+
+      category.items.forEach((item, ii) => {
+        total++;
+        const key = `${ci}-${ii}`;
+        const isChecked = !!saved[key];
+        if (isChecked) checked++;
+
+        const li = document.createElement("li");
+        if (isChecked) li.classList.add("done");
+        li.innerHTML = `
+          <input type="checkbox" ${isChecked ? "checked" : ""} data-key="${key}">
+          <span>${item}</span>
+        `;
+        const checkbox = li.querySelector("input");
+        const toggle = (e) => {
+          if (e.target.tagName !== "INPUT") {
+            checkbox.checked = !checkbox.checked;
+          }
+          saved[key] = checkbox.checked;
+          li.classList.toggle("done", checkbox.checked);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+          updateProgress();
+        };
+        li.addEventListener("click", toggle);
+        ul.appendChild(li);
+      });
+
+      card.innerHTML = `<h3><span class="icon">${category.icon}</span>${category.title}</h3>`;
+      card.appendChild(ul);
+      grid.appendChild(card);
+    });
+
+    function updateProgress() {
+      checked = Object.values(saved).filter(Boolean).length;
+      const pct = total === 0 ? 0 : (checked / total) * 100;
+      progressFill.style.width = `${pct}%`;
+      progressCount.textContent = `${checked} / ${total}`;
+    }
+
+    resetBtn.addEventListener("click", () => {
+      if (!confirm("Clear all checked items?")) return;
+      saved = {};
+      localStorage.removeItem(STORAGE_KEY);
+      document.querySelectorAll(".checklist-card input[type=checkbox]").forEach(cb => {
+        cb.checked = false;
+        cb.closest("li").classList.remove("done");
+      });
+      updateProgress();
+    });
+
+    updateProgress();
+  </script>
+</body>
+</html>
