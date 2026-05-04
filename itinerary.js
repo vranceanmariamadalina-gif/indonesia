@@ -76,7 +76,7 @@ const TRIP = {
       city: "Canggu, Bali",
       headline: "West Bali Coast + Jatiluwih",
       summary: "Hidden black-sand beaches and the UNESCO rice terrace hike. Thuan & Samy land 16:35.",
-      tag: "Thuan & Samy arrive 16:35",
+      tag: "Thuan & Samy arrive 19:00",
       hotel: { name: "Canggu villa / hotel", area: "Canggu, Bali — TBC", note: "Base for the first 4 nights in Bali." },
       schedule: [
         { time: "08:00", activity: "Depart Canggu", location: "Canggu → West Bali" },
@@ -112,36 +112,24 @@ const TRIP = {
       weekday: "Tuesday",
       group: "all",
       city: "Canggu, Bali",
-      headline: "Ubud Adventure — Rafting + ATV",
-      summary: "Pure action day. Rafting, jungle ATV and a quiet waterfall.",
+      headline: "Ubud Adventure & Freestyle",
+      summary: "Pure action day. Some want to go to Nusa Penida, or Snorkleing.",
       hotel: { name: "Canggu villa / hotel", area: "Canggu, Bali — TBC", note: "Same Canggu base." },
       schedule: [
-        { time: "07:00", activity: "Depart Canggu", location: "→ Ubud area" },
-        { time: "Morning", activity: "White-water rafting — Ayung (scenic) or Telaga Waja (more adrenaline)", location: "Ayung / Telaga Waja" },
-        { time: "Midday", activity: "Lunch", location: "Ubud area" },
-        { time: "Afternoon", activity: "Jungle ATV (1.5–2 hrs) — mud tracks, river crossings, cave tunnels", location: "Outskirts of Ubud" },
-        { time: "Late PM", activity: "Optional Tibumana or Tukad Cepung Waterfall stop", location: "Bangli area" },
-        { time: "Evening", activity: "Drive back to Canggu — dinner & rest", location: "Canggu" }
+        { time: "07:00", activity: "Freestyle", location: "→ Ubud area" },
       ],
-      tour: "Suggested: “Private Rafting + ATV Combo Ubud Adventure Day”"
     },
     {
       date: "2026-05-13",
       weekday: "Wednesday",
       group: "all",
       city: "Canggu, Bali",
-      headline: "Nusa Penida — Hiking & Handcrafts",
-      summary: "Day trip to Penida: Kelingking viewpoint, cliff trails, village crafts.",
+      headline: "Last day in Bali",
+      summary: "Day trip to Ubud",
       hotel: { name: "Canggu villa / hotel", area: "Canggu, Bali — TBC", note: "Last night in Canggu." },
       schedule: [
         { time: "06:30", activity: "Early departure to Sanur harbour", location: "Canggu → Sanur" },
-        { time: "07:30–08:30", activity: "Fast boat to Nusa Penida (~30–45 min)", location: "Sanur → Nusa Penida" },
-        { time: "09:00–13:00", activity: "Hiking — Kelingking Beach viewpoint, cliff trails, Broken Beach / Angel’s Billabong", location: "West Nusa Penida" },
-        { time: "13:00–14:00", activity: "Lunch at a clifftop warung", location: "Nusa Penida" },
-        { time: "14:00–17:00", activity: "Local handcrafts / village visit — weaving demos", location: "Nusa Penida village" },
-        { time: "17:30", activity: "Fast boat back to Sanur", location: "Nusa Penida → Sanur" },
-        { time: "19:00", activity: "Back in Canggu — dinner", location: "Canggu" }
-      ]
+        { time: "07:30–08:30"
     },
     {
       date: "2026-05-14",
