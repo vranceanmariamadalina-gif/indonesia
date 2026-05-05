@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phrases — Bahasa Indonesia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="brand">Voyage &middot; SG / ID</a>
+    <nav>
+      <a href="index.html">Itinerary</a>
+      <a href="checklist.html">Packing</a>
+      <a href="phrases.html" class="active">Phrases</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Bahasa Indonesia &middot; Survival kit</span>
+      <h1>Speak <em>like</em><br>a local</h1>
+      <p class="lead">Indonesian is one of the easiest Asian languages for travellers &mdash; no tones, mostly phonetic. A few words go a long way: locals light up when you try.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="section-title-block">
+      <span class="eyebrow">Pronunciation cheat-sheet</span>
+      <h2>Read it the way you see it</h2>
+      <p class="sub">A handful of rules covers almost everything. Stress sits on the second-to-last syllable.</p>
+    </div>
+
+    <div class="pron-grid">
+      <div class="pron-card"><span class="letter">c</span><span class="say">like <em>ch</em> in <em>chair</em></span></div>
+      <div class="pron-card"><span class="letter">j</span><span class="say">like <em>j</em> in <em>jam</em></span></div>
+      <div class="pron-card"><span class="letter">g</span><span class="say">always hard, like <em>go</em></span></div>
+      <div class="pron-card"><span class="letter">ng</span><span class="say">like <em>ng</em> in <em>singer</em></span></div>
+      <div class="pron-card"><span class="letter">ny</span><span class="say">like <em>ny</em> in <em>canyon</em></span></div>
+      <div class="pron-card"><span class="letter">r</span><span class="say">lightly rolled</span></div>
+      <div class="pron-card"><span class="letter">u</span><span class="say">like <em>oo</em> in <em>boot</em></span></div>
+      <div class="pron-card"><span class="letter">e</span><span class="say">often a soft <em>uh</em>, sometimes <em>eh</em></span></div>
+    </div>
+
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-pill active" data-filter="all">All categories</button>
+      <button class="filter-pill" data-filter="essentials">Essentials</button>
+      <button class="filter-pill" data-filter="getting-around">Getting around</button>
+      <button class="filter-pill" data-filter="food">Food &amp; drink</button>
+      <button class="filter-pill" data-filter="money">Money</button>
+      <button class="filter-pill" data-filter="emergency">Emergency</button>
+    </div>
+
+    <div class="phrase-search">
+      <input type="search" id="phrase-search" placeholder="Search English or Indonesian…" autocomplete="off">
+    </div>
+
+    <div class="phrase-grid" id="phrase-grid"></div>
+
+    <section class="notes-section">
+      <h3>A few cultural notes</h3>
+      <ul>
+        <li><span class="note-num">01</span><span><strong>Smile and slow down.</strong> Loud, fast or impatient tone reads as rude. A warm smile and a soft <em>permisi</em> opens almost any door.</span></li>
+        <li><span class="note-num">02</span><span><strong>Right hand only.</strong> Eat, give and receive with the right hand &mdash; the left is considered unclean.</span></li>
+        <li><span class="note-num">03</span><span><strong>Cover up at temples.</strong> Sarong and sash are required at Balinese temples; usually provided at the entrance.</span></li>
+        <li><span class="note-num">04</span><span><strong>"Tidak apa-apa"</strong> (no problem) is the universal grease. Use it generously when something goes mildly sideways.</span></li>
+        <li><span class="note-num">05</span><span><strong>Bargain politely.</strong> At markets, start around 40&ndash;50% of the asking price and meet in the middle. Always with a smile.</span></li>
+        <li><span class="note-num">06</span><span><strong>Bali speaks Balinese too.</strong> Locals appreciate a Balinese <em>"Om Swastiastu"</em> (greetings, peace) but Bahasa Indonesia is universal.</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-mark">Selamat jalan</div>
+    Save offline before flying &mdash; works without internet
+  </footer>
+
+  <script>
+    const PHRASES = [
+      {
+        category: "essentials",
+        title: "Greetings & courtesy",
+        icon: "👋",
+        rows: [
+          ["Hello",                        "Halo",                      "HAH-loh"],
+          ["Good morning",                 "Selamat pagi",              "suh-LAH-mat PAH-gee"],
+          ["Good afternoon (midday)",      "Selamat siang",             "suh-LAH-mat see-ANG"],
+          ["Good afternoon (late)",        "Selamat sore",              "suh-LAH-mat SOR-eh"],
+          ["Good evening / night",         "Selamat malam",             "suh-LAH-mat MAH-lam"],
+          ["Goodbye (to one leaving)",     "Selamat jalan",             "suh-LAH-mat JAH-lan"],
+          ["Goodbye (to one staying)",     "Selamat tinggal",           "suh-LAH-mat TING-gal"],
+          ["Please",                       "Tolong",                    "TOH-long"],
+          ["Thank you",                    "Terima kasih",              "tuh-REE-mah KAH-see"],
+          ["Thank you very much",          "Terima kasih banyak",       "...BAH-nyak"],
+          ["You're welcome",               "Sama-sama",                 "SAH-mah SAH-mah"],
+          ["Yes",                          "Ya / Iya",                  "yah / EE-yah"],
+          ["No / not",                     "Tidak (formal) / Nggak",    "TEE-dak / NG-gak"],
+          ["Sorry / excuse me",            "Maaf",                      "MAH-af"],
+          ["Excuse me (passing through)",  "Permisi",                   "puhr-MEE-see"],
+          ["No problem",                   "Tidak apa-apa",             "TEE-dak AH-pah AH-pah"],
+        ],
+      },
+      {
+        category: "essentials",
+        title: "Small talk",
+        icon: "💬",
+        rows: [
+          ["How are you?",                 "Apa kabar?",                "AH-pah KAH-bar"],
+          ["I'm fine, thanks",             "Baik, terima kasih",        "BAH-eek, ..."],
+          ["What's your name?",            "Siapa nama Anda?",          "see-AH-pah NAH-mah AHN-dah"],
+          ["My name is …",                 "Nama saya …",               "NAH-mah SAH-yah"],
+          ["Nice to meet you",             "Senang bertemu",            "suh-NANG buhr-TUH-moo"],
+          ["Where are you from?",          "Dari mana?",                "DAH-ree MAH-nah"],
+          ["I'm from Romania",             "Saya dari Rumania",         "SAH-yah DAH-ree roo-MAH-nee-ah"],
+          ["Do you speak English?",        "Bisa bahasa Inggris?",      "BEE-sah bah-HAH-sah ING-griss"],
+          ["I don't speak Indonesian",     "Saya tidak bisa bahasa Indonesia", "—"],
+          ["I don't understand",           "Saya tidak mengerti",       "SAH-yah TEE-dak muhn-GUHR-tee"],
+          ["Please speak slowly",          "Tolong bicara pelan-pelan", "..."],
+          ["Can you repeat that?",         "Bisa diulangi?",            "BEE-sah dee-oo-LANG-ee"],
+        ],
+      },
+      {
+        category: "essentials",
+        title: "Numbers",
+        icon: "🔢",
+        rows: [
+          ["1",   "Satu",        "SAH-too"],
+          ["2",   "Dua",         "DOO-ah"],
+          ["3",   "Tiga",        "TEE-gah"],
+          ["4",   "Empat",       "UHM-pat"],
+          ["5",   "Lima",        "LEE-mah"],
+          ["6",   "Enam",        "uh-NAHM"],
+          ["7",   "Tujuh",       "TOO-jooh"],
+          ["8",   "Delapan",     "duh-LAH-pan"],
+          ["9",   "Sembilan",    "suhm-BEE-lan"],
+          ["10",  "Sepuluh",     "suh-POO-looh"],
+          ["20",  "Dua puluh",   "DOO-ah POO-looh"],
+          ["100", "Seratus",     "suh-RAH-toos"],
+          ["1 000",   "Seribu",  "suh-REE-boo"],
+          ["10 000",  "Sepuluh ribu", "..."],
+          ["100 000", "Seratus ribu", "..."],
+          ["1 000 000", "Sejuta", "suh-JOO-tah"],
+        ],
+      },
+      {
+        category: "getting-around",
+        title: "Directions & transport",
+        icon: "🛺",
+        rows: [
+          ["Where is …?",                  "Di mana …?",                "dee MAH-nah"],
+          ["Bathroom / toilet",            "Kamar kecil / toilet",      "KAH-mar kuh-CHEEL"],
+          ["Beach",                        "Pantai",                    "PAN-tai"],
+          ["Hotel",                        "Hotel",                     "HOH-tel"],
+          ["Airport",                      "Bandara",                   "ban-DAH-rah"],
+          ["Bus station",                  "Terminal bus",              "—"],
+          ["Train station",                "Stasiun kereta",            "stah-SEE-oon kuh-REH-tah"],
+          ["Port / harbour",               "Pelabuhan",                 "puh-lah-BOO-han"],
+          ["Left",                         "Kiri",                      "KEE-ree"],
+          ["Right",                        "Kanan",                     "KAH-nan"],
+          ["Straight ahead",               "Lurus",                     "LOO-roos"],
+          ["Stop here, please",            "Berhenti di sini",          "buhr-HUHN-tee dee SEE-nee"],
+          ["How far?",                     "Berapa jauh?",              "buh-RAH-pah JAH-ooh"],
+          ["How long does it take?",       "Berapa lama?",              "buh-RAH-pah LAH-mah"],
+          ["I want to go to …",            "Saya mau ke …",             "SAH-yah mau kuh"],
+          ["Taxi / motorbike taxi",        "Taksi / ojek",              "TAK-see / OH-jek"],
+          ["Use the meter, please",        "Pakai argo, tolong",        "PAH-kai AR-go..."],
+        ],
+      },
+      {
+        category: "food",
+        title: "Food & drink",
+        icon: "🍜",
+        rows: [
+          ["Food",                         "Makanan",                   "mah-KAH-nan"],
+          ["Drink",                        "Minuman",                   "mee-NOO-man"],
+          ["Water",                        "Air",                       "AH-eer"],
+          ["Bottled water",                "Air mineral",               "AH-eer mee-nuh-RAL"],
+          ["Tea / coffee",                 "Teh / kopi",                "teh / KOH-pee"],
+          ["Beer",                         "Bir",                       "beer"],
+          ["Without sugar",                "Tanpa gula",                "TAN-pah GOO-lah"],
+          ["Not spicy, please",            "Tidak pedas",               "TEE-dak puh-DAS"],
+          ["A little spicy",               "Sedikit pedas",             "suh-DEE-keet puh-DAS"],
+          ["I'm vegetarian",               "Saya vegetarian",           "—"],
+          ["No meat",                      "Tanpa daging",              "TAN-pah DAH-ging"],
+          ["No pork",                      "Tanpa babi",                "TAN-pah BAH-bee"],
+          ["Delicious!",                   "Enak!",                     "uh-NAK"],
+          ["The bill, please",             "Minta bon / bill, tolong",  "MEEN-tah bon..."],
+          ["Cheers!",                      "Bersulang!",                "buhr-SOO-lang"],
+          ["I'd like …",                   "Saya mau …",                "SAH-yah mau"],
+        ],
+      },
+      {
+        category: "money",
+        title: "Shopping & money",
+        icon: "💵",
+        rows: [
+          ["How much?",                    "Berapa harganya?",          "buh-RAH-pah har-GAH-nyah"],
+          ["Too expensive",                "Terlalu mahal",             "tuhr-LAH-loo MAH-hal"],
+          ["Cheap / cheaper",              "Murah / lebih murah",       "MOO-rah"],
+          ["Can you lower the price?",     "Bisa kurang?",              "BEE-sah KOO-rang"],
+          ["Discount",                     "Diskon",                    "DEES-kohn"],
+          ["I'll take it",                 "Saya ambil",                "SAH-yah AHM-beel"],
+          ["Just looking",                 "Cuma lihat-lihat",          "CHOO-mah LEE-hat..."],
+          ["Cash",                         "Uang tunai",                "OO-ang TOO-nai"],
+          ["Card",                         "Kartu",                     "KAR-too"],
+          ["ATM",                          "ATM",                       "ah-teh-em"],
+          ["Receipt",                      "Struk / kwitansi",          "—"],
+          ["Change (money back)",          "Kembalian",                 "kuhm-BAH-lee-an"],
+        ],
+      },
+      {
+        category: "emergency",
+        title: "Health & emergency",
+        icon: "🚑",
+        rows: [
+          ["Help!",                        "Tolong!",                   "TOH-long"],
+          ["I need a doctor",              "Saya butuh dokter",         "SAH-yah BOO-tooh DOK-tuhr"],
+          ["Hospital",                     "Rumah sakit",               "ROO-mah SAH-keet"],
+          ["Pharmacy",                     "Apotek",                    "ah-POH-tek"],
+          ["Police",                       "Polisi",                    "poh-LEE-see"],
+          ["I'm sick",                     "Saya sakit",                "SAH-yah SAH-keet"],
+          ["I have a fever",               "Saya demam",                "SAH-yah duh-MAM"],
+          ["Stomach ache (Bali belly!)",   "Sakit perut",               "SAH-keet PUH-root"],
+          ["I'm allergic to …",            "Saya alergi …",             "SAH-yah ah-LEHR-gee"],
+          ["Call the embassy",             "Hubungi kedutaan",          "hoo-BOONG-ee kuh-doo-TAH-an"],
+          ["I lost my passport",           "Paspor saya hilang",        "PAS-por SAH-yah HEE-lang"],
+          ["Stolen",                       "Dicuri",                    "dee-CHOO-ree"],
+        ],
+      },
+    ];
+
+    const grid = document.getElementById("phrase-grid");
+
+    PHRASES.forEach((cat, ci) => {
+      const card = document.createElement("section");
+      card.className = "phrase-card";
+      card.dataset.category = cat.category;
+
+      const head = document.createElement("h3");
+      head.innerHTML = `<span class="icon">${cat.icon}</span>${cat.title}`;
+      card.appendChild(head);
+
+      const table = document.createElement("table");
+      table.className = "phrase-table";
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th>English</th>
+            <th>Bahasa Indonesia</th>
+            <th class="say-col">Say it</th>
+          </tr>
+        </thead>
+      `;
+      const tbody = document.createElement("tbody");
+      cat.rows.forEach(([en, id, say]) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td class="en">${en}</td>
+          <td class="id">${id}</td>
+          <td class="say-col say">${say || ""}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      card.appendChild(table);
+      grid.appendChild(card);
+    });
+
+    /* ----- Filter ----- */
+    document.getElementById("filter-bar").addEventListener("click", e => {
+      const btn = e.target.closest(".filter-pill");
+      if (!btn) return;
+      document.querySelectorAll(".filter-pill").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const f = btn.dataset.filter;
+      document.querySelectorAll(".phrase-card").forEach(card => {
+        const show = (f === "all") || (card.dataset.category === f);
+        card.style.display = show ? "" : "none";
+      });
+    });
+
+    /* ----- Search ----- */
+    const searchInput = document.getElementById("phrase-search");
+    searchInput.addEventListener("input", () => {
+      const q = searchInput.value.trim().toLowerCase();
+      document.querySelectorAll(".phrase-card").forEach(card => {
+        let anyVisible = false;
+        card.querySelectorAll("tbody tr").forEach(tr => {
+          const text = tr.textContent.toLowerCase();
+          const match = !q || text.includes(q);
+          tr.style.display = match ? "" : "none";
+          if (match) anyVisible = true;
+        });
+        if (q) {
+          card.style.display = anyVisible ? "" : "none";
+        } else {
+          card.style.display = "";
+        }
+      });
+      if (q) {
+        document.querySelectorAll(".filter-pill").forEach(b => b.classList.remove("active"));
+        document.querySelector('.filter-pill[data-filter="all"]').classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>
