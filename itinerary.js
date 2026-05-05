@@ -25,7 +25,7 @@ const TRIP = {
       city: "Singapore",
       headline: "Arrival in Singapore",
       summary: "Land, check in, dinner, and a first walk to Marina Bay Sands.",
-      hotel: { name: "Singapore hotel", area: "Singapore — TBC", note: "Confirm hotel name once booked." },
+      hotel: { name: "CUBE SOCIAL BOUTIQUE CAPSULE HOTEL", area: "Singapore"},
       schedule: [
         { time: "17:00–18:00", activity: "Arrival in Singapore", location: "Changi Airport" },
         { time: "19:00", activity: "Check-in at the hotel", location: "Hotel" },
@@ -40,7 +40,7 @@ const TRIP = {
       city: "Singapore",
       headline: "Gardens by the Bay & East Coast",
       summary: "Lush gardens, coastal cycling, hawker feast at sundown.",
-      hotel: { name: "Singapore hotel", area: "Singapore — TBC", note: "Same hotel, second night." },
+      hotel: { nname: "CUBE SOCIAL BOUTIQUE CAPSULE HOTEL", area: "Singapore" },
       schedule: [
         { time: "10:00", activity: "Gardens by the Bay — Supertree Grove & lush gardens", location: "Gardens by the Bay" },
         { time: "12:00", activity: "Parkland Green by Bike — coastal cycling along East Coast Park", location: "East Coast Park" },
@@ -56,7 +56,7 @@ const TRIP = {
       city: "Singapore → Bali",
       headline: "Beach morning, then fly to Bali",
       summary: "Last beach hours in Singapore, evening flight to Denpasar.",
-      hotel: { name: "Canggu villa / hotel", area: "Canggu, Bali — TBC", note: "Late check-in around 21:00." },
+      hotel: { name: "SS Beach Villa", area: "Gg. Dharma, Canggu, Kec. Kuta Utara, Kabupaten Badung, Bali 80361", note: "Late check-in around 21:00." },
       schedule: [
         { time: "10:00", activity: "Beach and freestyle time", location: "Singapore beach (East Coast / Sentosa)" },
         { time: "15:00", activity: "Get ready for the airport — pack up, check out", location: "Hotel" },
@@ -75,16 +75,15 @@ const TRIP = {
       group: "all",
       city: "Canggu, Bali",
       headline: "West Bali Coast + Jatiluwih",
-      summary: "Hidden black-sand beaches and the UNESCO rice terrace hike. Thuan & Samy land 16:35.",
+      summary: "Hidden black-sand beaches and the UNESCO rice terrace hike. Thuan & Samy land 19:00.",
       tag: "Thuan & Samy arrive 19:00",
-      hotel: { name: "Canggu villa / hotel", area: "Canggu, Bali — TBC", note: "Base for the first 4 nights in Bali." },
+      hotel: { name: "SS Beach Villa", area: "Canggu, Bali", note: "Base for the first 4 nights in Bali." },
       schedule: [
         { time: "08:00", activity: "Depart Canggu", location: "Canggu → West Bali" },
         { time: "09:00–12:00", activity: "Kedungu & Soka black-sand beaches → Balian Beach (cliffs, swim/surf, beachside cafés)", location: "West Bali coast" },
         { time: "13:00", activity: "Lunch at Jatiluwih Heaven or Gong Jatiluwih", location: "Jatiluwih" },
         { time: "14:00–16:30", activity: "Jatiluwih UNESCO rice terrace hike (2–3 hrs, multiple loop trails)", location: "Jatiluwih" },
-        { time: "16:35", activity: "Thuan & Samy arrive at Bali airport (Denpasar)", location: "Ngurah Rai → Canggu" },
-        { time: "18:00", activity: "Back in Canggu — meet up with Thuan & Samy", location: "Canggu" },
+        { time: "19:00", activity: "Back in Canggu — meet up with Thuan & Samy", location: "Canggu" },
         { time: "Evening", activity: "Group dinner — first night with the full team", location: "Canggu" }
       ],
       tour: "Suggested: “West Bali Coastal + Jatiluwih Trek Private Tour”"
@@ -96,7 +95,7 @@ const TRIP = {
       city: "Canggu, Bali",
       headline: "Munduk Highlands",
       summary: "Three waterfalls, jungle ridge walk and Twin Lakes — cool mountain air.",
-      hotel: { name: "Canggu villa / hotel", area: "Canggu, Bali — TBC", note: "Same Canggu base — return for the night." },
+      hotel: { name: "SS Beach Villa", area: "Canggu, Bali", note: "Same Canggu base — return for the night." },
       schedule: [
         { time: "07:00", activity: "Depart Canggu", location: "→ Munduk" },
         { time: "09:00–12:00", activity: "Munduk Waterfall Loop — Red Coral, Labuhan Kebo, Melanting (2–3 hrs, shaded jungle)", location: "Munduk" },
@@ -112,12 +111,18 @@ const TRIP = {
       weekday: "Tuesday",
       group: "all",
       city: "Canggu, Bali",
-      headline: "Ubud Adventure & Freestyle",
-      summary: "Pure action day. Some want to go to Nusa Penida, or Snorkleing.",
-      hotel: { name: "Canggu villa / hotel", area: "Canggu, Bali — TBC", note: "Same Canggu base." },
+      headline: "FreeStyle -Nusa Penida, Snorkeling  ",
+      summary: "Pure free style day.",
+      hotel: { name: "CSS Beach Villa", area: "Canggu, Bali", note: "Same Canggu base." },
       schedule: [
-        { time: "07:00", activity: "Freestyle", location: "→ Ubud area" },
+        { time: "07:00", activity: "Depart Canggu", location: "→ Ubud area" },
+        { time: "Morning", activity: "Freestyle", location: "Ayung / Telaga Waja" },
+        { time: "Midday", activity: "Lunch", location: "Ubud area" },
+        { time: "Afternoon", activity: "Freestyle" },
+        { time: "Late PM", activity: "Optional Tibumana or Tukad Cepung Waterfall stop", location: "Bangli area" },
+        { time: "Evening", activity: "Drive back to Canggu — dinner & rest", location: "Canggu" }
       ],
+      tour: "Suggested: “Freestyle”"
     },
     {
       date: "2026-05-13",
@@ -125,11 +130,11 @@ const TRIP = {
       group: "all",
       city: "Canggu, Bali",
       headline: "Last day in Bali",
-      summary: "Day trip to Ubud",
+      summary: "Ubud Art & Crafts",
       hotel: { name: "Canggu villa / hotel", area: "Canggu, Bali — TBC", note: "Last night in Canggu." },
       schedule: [
-        { time: "06:30", activity: "Early departure to Sanur harbour", location: "Canggu → Sanur" },
-        { time: "07:30–08:30"
+        { time: "07:30–08:30", activity: "Schedule not defined"}
+      ]
     },
     {
       date: "2026-05-14",
@@ -138,13 +143,12 @@ const TRIP = {
       city: "Gili (Lombok)",
       headline: "Boat to Gili Islands",
       summary: "Travel day. Padang Bai → Gili. Snorkel and bikes the rest of the day.",
-      hotel: { name: "Gili Islands stay", area: "Gili Trawangan / Air / Meno — TBC", note: "First of three nights in the Gilis." },
+      hotel: { name: "Gili Trawangan", area: "Gili Trawangan, Gili Trawangan, 83611", note: "1/2 in the Gilis." },
       schedule: [
         { time: "07:00", activity: "Check out, drive to Padang Bai harbour", location: "Canggu → Padang Bai" },
-        { time: "09:30", activity: "Fast boat Padang Bai → Gili (~1.5–2 hrs)", location: "→ Gili" },
-        { time: "12:00", activity: "Arrival on Gili — check into accommodation", location: "Gili Islands" },
-        { time: "13:00", activity: "Lunch by the beach", location: "Gili" },
-        { time: "14:00–18:00", activity: "Snorkelling, swimming, bikes around the island (no motors allowed)", location: "Gili" },
+        { time: "10:30", activity: "Fast boat Padang Bai → Gili (~2-4hrs)", location: "→ Gili" },
+        { time: "14:00", activity: "Arrival on Gili — check into accommodation", location: "Gili Islands" },
+        { time: "15:00", activity: "Beach day", location: "Gili" },
         { time: "Evening", activity: "Sunset drinks + dinner on the beach", location: "Gili" }
       ]
     },
@@ -152,10 +156,10 @@ const TRIP = {
       date: "2026-05-15",
       weekday: "Friday",
       group: "all",
-      city: "Gili (Lombok)",
+      city: "Gili ",
       headline: "Gili Islands — full day",
       summary: "Snorkelling with turtles, beach time, sunset on the west side.",
-      hotel: { name: "Gili Islands stay", area: "Gili Trawangan / Air / Meno — TBC", note: "Second night in the Gilis." },
+      hotel: { name: "Gili Trawangan", area: "Gili Trawangan, Gili Trawangan, 83611", note: "2/2 in the Gilis." },
       schedule: [
         { time: "Morning", activity: "Snorkelling trip — Gili Meno turtles, statue dive site", location: "Around the three Gilis" },
         { time: "Afternoon", activity: "Beach time, paddleboard, optional freediving / scuba", location: "Gili" },
@@ -167,13 +171,13 @@ const TRIP = {
       weekday: "Saturday",
       group: "all",
       city: "Lombok",
-      headline: "Beach Party",
+      headline: "Freestyle in Lombok",
       summary: "Optional mainland Lombok beaches + a beach party in the evening.",
-      hotel: { name: "Gili Islands stay", area: "Gili Trawangan / Air / Meno — TBC", note: "Third night in the Gilis (or 1 night mainland Lombok if doing Selong Belanak)." },
+      hotel: { name: "Lombok", area: "Jalan Bypass BIL km.2 - Praya, Praya, 83572", note: "1/1 in Lombok" },
       schedule: [
         { time: "Morning", activity: "Boat / transfer to mainland Lombok or extended Gili day", location: "Lombok" },
-        { time: "Afternoon", activity: "Beach activities — swim, snorkel, surf at Selong Belanak (mainland) or chill on Gili", location: "Lombok / Gili" },
-        { time: "Evening", activity: "Beach Party — music, food, drinks on the sand", location: "Gili Trawangan / Lombok" }
+        { time: "Afternoon", activity: "Beach activities — swim, snorkel, surf at Selong Belanak (mainland)", location: "Lombok / Gili" },
+        { time: "Evening", activity: "Beach Party — music, food, drinks on the sand", location: "Lombok" }
       ]
     },
     {
@@ -183,11 +187,11 @@ const TRIP = {
       city: "Yogyakarta (Java)",
       headline: "Flight to Yogyakarta",
       summary: "Travel day. Land in Java in time for a gudeg dinner.",
-      hotel: { name: "Yogyakarta hotel", area: "Yogyakarta — TBC", note: "First of two nights in Yogyakarta." },
+      hotel: { name: "Nextdoor Rooms", area: "Jalan Parangtritis, Gang Timuran MG III/140, Mergangsan, Mergangsan, 55153 Yogyakarta, Indonesi", note: "1/2 in Yogyakarta." },
       schedule: [
-        { time: "Morning", activity: "Boat to Bali / transfer to Lombok airport", location: "→ airport" },
-        { time: "Midday", activity: "Flight to Yogyakarta", location: "Flight → YIA / JOG" },
-        { time: "Afternoon", activity: "Arrival in Yogyakarta — check in", location: "Yogyakarta" },
+        { time: "Morning", activity: "Flight", location: "→ airport" },
+        { time: "Midday", activity: "Check-in to Yogyakarta", location: "Flight → YIA / JOG" },
+        { time: "Afternoon", activity: "Rest in Yogyakarta", location: "Yogyakarta" },
         { time: "Evening", activity: "Dinner — try gudeg (jackfruit specialty)", location: "Yogyakarta" }
       ]
     },
@@ -196,15 +200,11 @@ const TRIP = {
       weekday: "Monday",
       group: "all",
       city: "Yogyakarta (Java)",
-      headline: "Kota Gede, Pottery & Borobudur Sunset",
-      summary: "Silver district markets, hands-on pottery, then Borobudur at golden hour.",
-      hotel: { name: "Yogyakarta hotel", area: "Yogyakarta — TBC", note: "Second night in Yogyakarta." },
+      headline: "Cave in Yogi",
+      summary: "Jomblang Cave Tour",
+      hotel: {  name: "Nextdoor Rooms", area: "Jalan Parangtritis, Gang Timuran MG III/140, Mergangsan, Mergangsan, 55153 Yogyakarta, Indonesi", note: "2/2 in Yogyakarta."},
       schedule: [
-        { time: "09:00–11:30", activity: "Kota Gede — silver-smithing district, markets and crafts", location: "Kota Gede" },
-        { time: "12:00", activity: "Lunch", location: "Yogyakarta" },
-        { time: "13:00–15:00", activity: "Karanganyar Pottery Village — traditional pottery workshop", location: "Karanganyar" },
-        { time: "15:30", activity: "Drive to Borobudur (~1 hr)", location: "→ Borobudur" },
-        { time: "16:30–18:30", activity: "Borobudur Temple Sunset Tour — climb the stupa terraces at golden hour", location: "Borobudur" },
+        { time: "07:00–17:00", activity: "Jomblang Cave Tour", location: "Jomblang" },
         { time: "19:30", activity: "Dinner & return to Yogyakarta", location: "Yogyakarta" }
       ]
     },
@@ -215,7 +215,7 @@ const TRIP = {
       city: "Malang (Java)",
       headline: "Prambanan + Train to Malang",
       summary: "Morning at the great Hindu temple, then a long scenic train ride east.",
-      hotel: { name: "Malang hotel", area: "Malang — TBC", note: "First of two nights in Malang." },
+      hotel: { name: "Rice Field Villa", area: "Tumpang", note: "1/2 in Malang." },
       schedule: [
         { time: "08:00–11:00", activity: "Prambanan Hindu Temple complex — UNESCO 9th-century temples", location: "Prambanan" },
         { time: "11:30", activity: "Lunch", location: "Yogyakarta area" },
@@ -228,14 +228,12 @@ const TRIP = {
       weekday: "Wednesday",
       group: "all",
       city: "Malang (Java)",
-      headline: "Jomblang Cave + Coban Pelangi Waterfall",
+      headline: "Free Style",
       summary: "Vertical cave descent for the “heavenly light”, then a jungle waterfall.",
-      tag: "Confirm Jomblang day-trip distance",
-      hotel: { name: "Malang hotel", area: "Malang — TBC", note: "Second night in Malang." },
+      tag: "Confirm Coban Palangi Waterfall",
+      hotel: { name: "Rice Field Villa", area: "Tumpang, Indonesia", note: "2/2 in Tumpang." },
       schedule: [
-        { time: "Early AM", activity: "Depart for Jomblang Cave (note: it’s closer to Yogyakarta — confirm or substitute a local Malang cave)", location: "Cave site" },
-        { time: "Late AM", activity: "Cave tour — vertical descent, mid-day “heavenly light” phenomenon", location: "Jomblang / alternative" },
-        { time: "Afternoon", activity: "Coban Pelangi Waterfall — short jungle hike, rainbow effect on sunny afternoons", location: "Coban Pelangi" },
+        { time: "Early AM", activity: "Coban Palangi Waterfall", location: "Cave site" },
         { time: "Evening", activity: "Dinner in Malang", location: "Malang" }
       ]
     },
@@ -244,11 +242,11 @@ const TRIP = {
       weekday: "Thursday",
       group: "all",
       city: "Bromo (Java)",
-      headline: "Mount Bromo — Sunrise & Crater",
-      summary: "Pre-dawn jeep, sunrise at King Kong Hill, walk to the crater rim.",
-      hotel: { name: "Bromo lodge", area: "Cemoro Lawang / Bromo area — TBC", note: "Stay in Bromo for the early Ijen start." },
+      headline: "Tumpak Sewu Waterfall",
+      summary: "We explore the Tumpak nature",
+      hotel: { name: "Tumpak", area: "Tumpak", note: "Stay in Bromo-tour starts." },
       schedule: [
-        { time: "00:30–01:00", activity: "Wake up — 4WD jeep up to Bromo viewpoint", location: "Malang → Bromo" },
+        { time: "8:00-13:00", activity: "Wake up — 4WD jeep up to Tumpak Waterfall viewpoint", location: "Bromo" },
         { time: "04:30", activity: "Sunrise viewpoint at King Kong Hill / Penanjakan", location: "Bromo viewpoint" },
         { time: "06:30", activity: "Cross the Sea of Sand — walk/horse up to the crater rim", location: "Bromo crater" },
         { time: "09:00", activity: "Breakfast", location: "Bromo area" },
@@ -261,17 +259,15 @@ const TRIP = {
       weekday: "Friday",
       group: "all",
       city: "Bromo (Java)",
-      headline: "Mount Ijen — Blue Fire & Crater Lake",
-      summary: "Midnight hike, sulfur blue flames, sunrise over the turquoise acid lake.",
+      headline: "Bromo Hike",
+      summary: "Bromo Guided Tour.",
       hotel: { name: "Bromo / East Java lodge", area: "Bromo / East Java — TBC", note: "Rest day after Ijen." },
       schedule: [
-        { time: "00:30", activity: "Transfer Bromo → Ijen base camp (~4 hrs)", location: "Bromo → Ijen" },
-        { time: "01:30", activity: "Start hike up Mount Ijen (~1.5–2 hrs)", location: "Ijen" },
-        { time: "03:30", activity: "Descend into the crater for the blue fire (gas masks required)", location: "Ijen crater" },
-        { time: "05:30", activity: "Sunrise over the turquoise acid lake", location: "Ijen rim" },
-        { time: "07:30", activity: "Hike back down + breakfast", location: "Ijen base" },
-        { time: "Afternoon", activity: "Rest day — optional Tumpak Sewu stop if energy allows", location: "East Java" },
-        { time: "Evening", activity: "Sleep in Bromo / East Java area", location: "Bromo / Java" }
+        { time: "04:30", activity: "Sunrise viewpoint at King Kong Hill / Penanjakan", location: "Bromo viewpoint" },
+        { time: "06:30", activity: "Cross the Sea of Sand — walk/horse up to the crater rim", location: "Bromo crater" },
+        { time: "09:00", activity: "Breakfast", location: "Bromo area" },
+        { time: "Afternoon", activity: "Rest, optional Whispering Sands or Teletubbies Hill stop", location: "Bromo" },
+        { time: "Evening", activity: "Dinner & sleep in Bromo (early start for Ijen)", location: "Bromo" }
       ]
     },
     {
@@ -279,14 +275,18 @@ const TRIP = {
       weekday: "Saturday",
       group: "all",
       city: "Denpasar (Bali)",
-      headline: "Tumpak Sewu Waterfall → Bali",
-      summary: "Iconic “thousand waterfalls” shot, ferry back to Bali, final dinner.",
+      headline: "Mount Ijen — Blue Fire & Crater Lake → Bali",
+      summary: "Midnight hike, sulfur blue flames, sunrise over the turquoise acid lake., ferry back to Bali, final dinner.",
       hotel: { name: "Bali hotel (final night)", area: "Denpasar / Sanur — TBC", note: "Last night before flying home." },
       schedule: [
-        { time: "Early AM", activity: "Drive to Tumpak Sewu — hike down to the base for the iconic shot", location: "Tumpak Sewu" },
-        { time: "Midday", activity: "Lunch + drive to Ketapang ferry port", location: "Java east coast" },
-        { time: "Afternoon", activity: "Ferry across to Bali (Gilimanuk) → Denpasar / Sanur", location: "Java → Bali" },
+        { time: "00:30", activity: "Transfer Bromo → Ijen base camp (~4 hrs)", location: "Bromo → Ijen" },
+        { time: "01:30", activity: "Start hike up Mount Ijen (~1.5–2 hrs)", location: "Ijen" },
+        { time: "03:30", activity: "Descend into the crater for the blue fire (gas masks required)", location: "Ijen crater" },
+        { time: "05:30", activity: "Sunrise over the turquoise acid lake", location: "Ijen rim" },
+        { time: "07:30", activity: "Hike back down + breakfast", location: "Ijen base" },
+         { time: "Afternoon", activity: "Ferry across to Bali (Gilimanuk) → Denpasar / Sanur", location: "Java → Bali" },
         { time: "Evening", activity: "Final dinner in Bali", location: "Denpasar / Sanur" }
+  
       ]
     },
     {
